@@ -245,17 +245,14 @@ GEM
     regexp_parser (2.9.0)
     reline (0.4.3)
       io-console (~> 0.5)
-<<<<<<< HEAD
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-=======
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
->>>>>>> bfc3fce8524075ba01080ab69021639c0d286985
     rexml (3.2.6)
     rubyzip (2.3.2)
     sassc (2.4.0)
