@@ -1,7 +1,7 @@
 class CreateCarWashes < ActiveRecord::Migration[7.1]
   def change
     create_table :car_washes do |t|
-      t.references :user_id, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.string :name
       t.string :location
       t.integer :price_sedan
