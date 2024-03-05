@@ -1,1 +1,7 @@
 <h2><%= @car_wash.name %></h2>
+<p><%= @car_wash.price_sedan %></p>
+<p><%= @car_wash.price_suv %></p>
+<p><%= @car_wash.price_truck %></p>
+<p><%= @car_wash.price_luxury %></p>
+
+ <%= button_to "Destroy this car wash", @car_wash, method: :delete %>

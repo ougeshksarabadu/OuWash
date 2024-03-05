@@ -1,0 +1,8 @@
+<h2>Cars</h2>
+<% @cars.each do |car| %>
+
+
+<ul><%= link_to car.brand, car %></ul>
+
+<%end%>
+<%= link_to "Create car", new_car_path %>
