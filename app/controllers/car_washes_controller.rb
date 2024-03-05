@@ -14,7 +14,7 @@ class CarWashesController < ApplicationController
   end
 
   def show
-    @car_wash = Car_wash.find(params {:id})
+    @car_wash = Car_wash.find(params { :id })
   end
 
   private
