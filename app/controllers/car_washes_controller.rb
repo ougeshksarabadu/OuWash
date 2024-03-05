@@ -1,26 +1,35 @@
 class CarWashesController < ApplicationController
+  before_action :set_car_wash, only: %i[show destroy]
   def new
-    @car_wash = Car_wash.new
+    @car_wash = CarWash.new
   end
 
   def create
-    @car_wash = Car_wash.new(car_wash_params)
+    @car_wash = CarWash.new(car_wash_params)
+    @car_wash.user = current_user
     @car_wash.save
-    redirect_to car_wash_path(@car_washes)
+    redirect_to car_wash_path(@car_wash)
   end
 
   def index
-    @car_washes = Car_wash.all
+    @car_washes = CarWash.all
   end
 
   def show
-    @car_wash = Car_wash.find(params { :id })
+  end
+
+  def destroy
+    @car_wash.destroy
+    redirect_to car_washes_path
   end
 
   private
 
+  def set_car_wash
+    @car_wash = CarWash.find(params[:id])
+  end
+
   def car_wash_params
     params.required(:car_wash).permit(:name, :price_sedan, :price_suv, :price_truck, :price_luxury)
   end
-
 end
