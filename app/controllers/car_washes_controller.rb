@@ -7,9 +7,11 @@ class CarWashesController < ApplicationController
   def create
     @car_wash = CarWash.new(car_wash_params)
     @car_wash.user = current_user
-    @car_wash.save
-    redirect_to car_wash_path(@car_wash)
-  end
+    if @car_wash.save
+      redirect_to car_wash_path(@car_wash)
+    else
+      render :new, status: :unprocessable_entity
+    end
 
   def index
     @car_washes = CarWash.all
