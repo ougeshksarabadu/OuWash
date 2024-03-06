@@ -1,7 +1,4 @@
 class AppointmentsController < ApplicationController
-  def index
-    @appointments = Appointment.all
-  end
 
   def show
     @appointment = Appointment.find(params[:id])
@@ -15,7 +12,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
 
     if @appointment.save
-      redirect_to @appointment, notice: "Appointment was successfully created."
+      redirect_to @appointment
     else
       render :new, status: :unprocessable_entity
     end
