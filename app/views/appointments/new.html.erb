@@ -1,0 +1,8 @@
+<div class="container border mt-3 p-2">
+  <h1 class="mt-4">Your Appointment</h1>
+  <%= simple_form_for [@car_wash, @appointment] do |form| %>
+    <%= form.input :date, label: 'date' %>
+    <%= form.button :submit, 'Create car wash', class: 'btn btn-primary w-100' %>
+  <% end %>
+
+</div>
