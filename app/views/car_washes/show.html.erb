@@ -5,3 +5,4 @@
 <p><%= @car_wash.price_luxury %></p>
 
  <%= button_to "Destroy this car wash", @car_wash, method: :delete %>
+<%= link_to "Book", new_car_wash_appointment_path(:car_wash_id)%>
