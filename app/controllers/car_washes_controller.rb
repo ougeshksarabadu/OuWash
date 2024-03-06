@@ -1,5 +1,6 @@
 class CarWashesController < ApplicationController
   before_action :set_car_wash, only: %i[show destroy]
+
   def new
     @car_wash = CarWash.new
   end
@@ -12,6 +13,7 @@ class CarWashesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
 
   def index
     @car_washes = CarWash.all
