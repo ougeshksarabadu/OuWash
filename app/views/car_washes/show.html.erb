@@ -4,4 +4,7 @@
 <p><%= @car_wash.price_truck %></p>
 <p><%= @car_wash.price_luxury %></p>
 
+
  <%= button_to "Destroy this car wash", @car_wash, method: :delete %>
+<%= link_to "Back", car_washes_path, class: "btn btn-primary" %>
+<%= link_to "Book", _path, class: "btn btn-primary" %>
