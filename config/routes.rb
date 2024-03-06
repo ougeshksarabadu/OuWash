@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :car_washes do
-    resources :appointments, only: [:show, :new, :destroy]
+    resources :appointments
     resources :cars
   end
 end
