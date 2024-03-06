@@ -9,6 +9,7 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new
+    @car_wash = CarWash.find(params[:car_wash_id])
   end
 
   def create

@@ -1,0 +1,6 @@
+<h2><%= @car.brand %></h2>
+<p>Car Type: <%= @car.car_type %></p>
+<p>Year: <%= @car.year %></p>
+
+<%= button_to "Destroy this car", @car, method: :delete %>
+<%= link_to "Back", cars_path%>
