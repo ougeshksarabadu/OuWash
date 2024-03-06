@@ -7,8 +7,10 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @car.user = current_user
-    @car.save
-    redirect_to cars_path
+    if @car.save
+      redirect_to @car, notice: “Car was successfully added.”
+    else
+      render :new, status: :unprocessable_entity
   end
 
   def index
