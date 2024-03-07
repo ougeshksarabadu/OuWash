@@ -1,10 +1,24 @@
-<h2>Car Washes</h2>
-<% @car_washes.each do |car_wash| %>
+  <div class="car-wash-container">
+    <h2>Car Washes</h2>
 
+    <div class="car-washes">
+      <% @car_washes.each do |car_wash| %>
+        <div class="car-wash">
+          <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Car Wash Image">
+          <div class="car-wash-details">
+            <div class="car-wash-name"><%= car_wash.name %></div>
+            <div class="car-wash-location"><%= car_wash.location %></div>
+            <a href="<%= car_wash_path(car_wash) %>" class="btn-primary">View Details</a>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
 <ul><%= link_to car_wash.name, car_wash %></ul>
 
 
 <% end %>
 <%= link_to "Create New Car Wash", new_car_wash_path, class: "btn btn-primary" %>
+
+  </div>
 
