@@ -1,8 +1,10 @@
 <div class="container border mt-3 p-2">
   <h1 class="mt-4">Your Appointment</h1>
-  <%= simple_form_for [@car_wash, @appointment] do |form| %>
+
+  <%= simple_form_for([@car_wash, @appointment]) do |form| %>
     <%= form.input :date, label: 'date' %>
-    <%= form.association :car, label_method: :to_s, include_blank: false, collection: ["sedan", "suv", "truck", "luxury"]%>
+    <%= form.input :car, include_blank: false, collection: Car.where(user_id: current_user.id), label_method: lambda { |car| "#{car.brand} - #{car.year} - #{car.car_type}" }
+%>
     <%= form.button :submit, 'Create car wash', class: 'btn btn-primary w-100' %>
   <% end %>
 

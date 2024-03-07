@@ -1,0 +1,13 @@
+<h1>Appointments</h1>
+<% @appointments.each do |appointment| %>
+
+<div class="card ">
+  <div class="card-body">
+<ul>
+  <%= link_to appointment.date, car_wash_appointments_path %>
+   <%= link_to "Delete", appointment_path(appointment), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this outfit?" }%>
+  </ul>
+
+  </div>
+</div>
+<% end %>
