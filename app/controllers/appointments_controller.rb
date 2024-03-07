@@ -1,6 +1,5 @@
 class AppointmentsController < ApplicationController
   def index
-    raise
     @user = current_user
     @appointments = Appointment.all
   end
