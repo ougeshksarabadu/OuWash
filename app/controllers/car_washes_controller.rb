@@ -34,6 +34,6 @@ class CarWashesController < ApplicationController
   end
 
   def car_wash_params
-    params.required(:car_wash).permit(:name, :price_sedan, :price_suv, :price_truck, :price_luxury)
+    params.required(:car_wash).permit(:name, :price_sedan, :price_suv, :price_truck, :price_luxury, :location)
   end
 end
