@@ -3,9 +3,8 @@
 
   <%= simple_form_for([@car_wash, @appointment]) do |form| %>
     <%= form.input :date, label: 'date' %>
-    <%= form.input :car, include_blank: false, collection: Car.where(user_id: current_user.id), label_method: lambda { |car| "#{car.brand} - #{car.year} - #{car.car_type}" }
-%>
-    <%= form.button :submit, 'Create car wash', class: 'btn btn-primary w-100' %>
+    <%= form.input :car, include_blank: false, collection: Car.where(user_id: current_user.id), label_method: lambda { |car| "#{car.brand} - #{car.year} - #{car.car_type}" }%>
+    <%= form.button :submit, 'Create appointment', class: 'btn btn-primary w-100' %>
   <% end %>
 
 </div>
