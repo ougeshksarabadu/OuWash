@@ -2,6 +2,7 @@ class CarsController < ApplicationController
   before_action :set_car, only: %i[show]
   def new
     @car = Car.new
+    @car_wash = CarWash.find(params[:car_wash_id])
   end
 
   def create
@@ -15,12 +16,13 @@ class CarsController < ApplicationController
   end
 
   def index
-    @cars = Car.all
+    @cars = Car.where(user_id: current_user.id)
   end
 
   def destroy
+    @car = Car.find(params[:id])
     @car.destroy
-    redirect_to cars_path
+    redirect_to car_wash_cars_path(@car)
   end
 
   def show
