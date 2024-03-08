@@ -1,5 +1,5 @@
 class CarWashesController < ApplicationController
-  before_action :set_car_wash, only: %i[show destroy]
+  before_action :set_car_wash, only: %i[show edit destroy]
 
   def new
     @car_wash = CarWash.new
@@ -32,6 +32,19 @@ class CarWashesController < ApplicationController
     @appointments.destroy_all
     @car_wash.destroy
     redirect_to car_washes_path
+  end
+
+  def edit
+    @car_wash = CarWash.find(params[:id])
+  end
+
+  def update
+    @car_wash = CarWash.find(params[:id])
+    if @car_wash.update(car_wash_params)
+      redirect_to @car_wash, notice: 'Car wash was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   private

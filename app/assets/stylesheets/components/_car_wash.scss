@@ -62,6 +62,7 @@ img {
 
 .price-list {
   margin-bottom: 20px;
+
 }
 
 .price-list p {
@@ -75,16 +76,20 @@ img {
 .show-image{
   width: 600px;
   height: auto;
+
 }
 
 .btn-danger {
   background-color: #dc3545; /* Red color for delete button */
   color: #fff; /* White text color */
+  margin-top: 5px;
 }
 
 .btn-primary {
   background-color: #007bff; /* Blue color for back button */
-  color: #fff; /* White text color */
+  color: #fff;
+  display: flex;
+ /* White text color */
 }
 
 .btn-success {
@@ -101,4 +106,18 @@ img {
   cursor: pointer;
   transition: background-color 0.3s ease; /* Add smooth transition effect */
   margin-right: 10px; /* Add margin between buttons */
+}
+
+.car-wash-name h1{
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+.location-show{
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.description p{
+  font-weight: 100;
 }
