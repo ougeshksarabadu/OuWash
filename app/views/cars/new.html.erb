@@ -1,8 +1,8 @@
 <div class="container border mt-3 p-2">
   <h1 class="mt-4">Your Car</h1>
-  <%= simple_form_for @car do |form| %>
+  <%= simple_form_for ([@car_wash, @car]) do |form| %>
      <%= form.input :brand, label: 'brand' %>
-      <%= form.input :car_type, label: 'car type' %>
+      <%= form.input :car_type, label: 'car type', include_blank: false, collection: ["sedan", "suv", "truck", "luxury"]%>
        <%= form.input :year, label: 'year' %>
 
     <%= form.button :submit, 'Create car', class: 'btn btn-primary w-100' %>

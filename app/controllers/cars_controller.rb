@@ -15,10 +15,13 @@ class CarsController < ApplicationController
   end
 
   def index
-    @cars = Car.all
+    @cars = Car.where(user_id: current_user.id)
   end
 
   def destroy
+    @car = Car.find(params[:id])
+    @appointments = Appointment.where(car_id: @car.id)
+    @appointments.destroy_all
     @car.destroy
     redirect_to cars_path
   end
