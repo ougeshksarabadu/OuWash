@@ -10,7 +10,7 @@
   <p><strong>📍Location:</strong> <%= @car_wash.location %></p>
   </div>
   <div class="description">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean arcu turpis, condimentum sit amet leo a, tristique ullamcorper arcu. Mauris augue dui, rutrum et ex nec, ultricies auctor nulla. Curabitur orci est, aliquam quis tortor ac, pretium commodo tortor. Aliquam sagittis pretium neque, eu dignissim eros ultricies quis. Suspendisse sagittis nunc eget magna semper, nec pellentesque sem ultrices. Integer eget congue felis. Morbi dapibus lorem ut malesuada commodo. Nam at blandit nulla.</p>
+  <p><%= @car_wash.description %></p>
   </div>
   <div class="price-list">
     <p><strong>Price for Sedan:</strong> <%= number_to_currency(@car_wash.price_sedan) %></p>
@@ -21,8 +21,11 @@
 <div class="buttons-show">
 
   <%= link_to "Back", car_washes_path, class: "btn btn-primary" %>
-  <%= button_to "Destroy this car wash", @car_wash, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-   <%= link_to "Edit", edit_car_wash_path, class: "btn btn-secondary" %>
+  <div class= "buttons-side-by-side">
+    <%= link_to "Edit", edit_car_wash_path, class: "btn btn-secondary" %>
+  <%= button_to "Delete", @car_wash, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+</div>
 </div>
 
 
+</div>

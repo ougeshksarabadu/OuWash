@@ -1,13 +1,13 @@
-<div class="edit-card">
-<div class="edit-form">
-<div class= "edit-name">
-<h1>Edit Car Wash</h1>
-</div>
-<div class= "edit-block">
-<%= render 'form', car_wash: @car_wash%>
-</div>
-<div class="edit-car-wash">
-<%= link_to 'Back', car_washes_path %>
-</div>
-</div>
+<div class="edit-card row justify-content-center">
+  <div class="edit-form col-4 ">
+    <div class= "edit-name">
+      <h1>Edit Car Wash</h1>
+    </div>
+    <div class= "edit-block">
+      <%= render 'form', car_wash: @car_wash%>
+    </div>
+    <div class="edit-car-wash">
+      <%= link_to 'Back', car_washes_path %>
+    </div>
+  </div>
 </div>

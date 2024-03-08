@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :appointments
     resources :cars
   end
-  resources :cars, only: :approve
+
+  resources :cars
   resources :appointments, only: :destroy
 end

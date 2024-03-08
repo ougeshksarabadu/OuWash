@@ -1,6 +1,12 @@
-<h2><%= @car.brand %></h2>
+<div class="car-card row justify-content-center">
+<div class= "car-name">
+<h1>YOUR CAR</h1>
+</div>
+<div class="car-brand">
+<p><%= @car.brand %><p>
 <p>Car Type: <%= @car.car_type %></p>
 <p>Year: <%= @car.year %></p>
-
+</div>
 <%= button_to "Destroy this car", @car, method: :delete %>
 <%# <%= link_to "Back", car_wash_cars_path%>
+</div>
