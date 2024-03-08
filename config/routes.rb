@@ -16,4 +16,11 @@ Rails.application.routes.draw do
   end
   resources :cars
   resources :appointments, only: :destroy
+
+  resources :appointments do
+    member do
+      post :approve
+      post :decline
+    end
+  end
 end
