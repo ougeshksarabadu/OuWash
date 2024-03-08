@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
 
   def index
     @user = current_user
-    @appointments = current_user.appointments
+    @appointments = current_user.appointments.sort { |a , b| a.id <=> b.id }
 
     # if current_user.owner
     #   @car_washes = CarWash.where(user_id: current_user.id)
@@ -42,6 +42,15 @@ class AppointmentsController < ApplicationController
   def approve
     @appointment = Appointment.find(params[:id])
     @appointment.approval = true
+    @appointment.save
+    redirect_to car_wash_appointments_path(@appointment.car_wash)
+  end
+
+  def decline
+    @appointment = Appointment.find(params[:id])
+    @appointment.update(approval: false)
+    @appointment.save
+    redirect_to car_wash_appointments_path(@appointment.car_wash)
   end
 
   private

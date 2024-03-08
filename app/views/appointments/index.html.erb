@@ -6,9 +6,11 @@
   <div class="card-body ">
 <ul>
 <%= appointment.date %>
-<%= link_to "Approve", method: :post,class: "btn btn-primary" %>
-<%= link_to "Delete", appointment_path(appointment), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this?" }, class: "btn btn-danger"%>
   </ul>
+<%= appointment.approval ? "Approved" : "Not Approved" %>
+<%= link_to "Approve", approve_appointment_path(appointment), data: {turbo_method: :post} ,class: "btn btn-success" %>
+<%= link_to "Decline", decline_appointment_path(appointment), data: {turbo_method: :post} ,class: "btn btn-success" %>
+<%= link_to "Delete", appointment_path(appointment), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this?" }, class: "btn btn-danger"%>
 
   </div>
 </div>
