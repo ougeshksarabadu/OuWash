@@ -25,6 +25,7 @@ class CarWashesController < ApplicationController
   end
 
   def show
+    @appointment = Appointment.new
   end
 
   def destroy
