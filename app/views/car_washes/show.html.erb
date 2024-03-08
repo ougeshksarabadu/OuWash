@@ -1,17 +1,26 @@
 <div class="car-wash-details">
+<div class="car-wash-name">
+
+<h1><%= @car_wash.name %></h1>
+</div>
   <div class="show-image">
     <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Car Wash Image">
   </div>
-  <h2><%= @car_wash.name %></h2>
-  <p><strong>Location:</strong> <%= @car_wash.location %></p>
+<div class="location-show">
+  <p><strong>📍Location:</strong> <%= @car_wash.location %></p>
+  </div>
+  <div class="description">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean arcu turpis, condimentum sit amet leo a, tristique ullamcorper arcu. Mauris augue dui, rutrum et ex nec, ultricies auctor nulla. Curabitur orci est, aliquam quis tortor ac, pretium commodo tortor. Aliquam sagittis pretium neque, eu dignissim eros ultricies quis. Suspendisse sagittis nunc eget magna semper, nec pellentesque sem ultrices. Integer eget congue felis. Morbi dapibus lorem ut malesuada commodo. Nam at blandit nulla.</p>
+  </div>
   <div class="price-list">
     <p><strong>Price for Sedan:</strong> <%= number_to_currency(@car_wash.price_sedan) %></p>
     <p><strong>Price for SUV:</strong> <%= number_to_currency(@car_wash.price_suv) %></p>
     <p><strong>Price for Truck:</strong> <%= number_to_currency(@car_wash.price_truck) %></p>
     <p><strong>Price for Luxury:</strong> <%= number_to_currency(@car_wash.price_luxury) %></p>
     </div>
+<div class="buttons-show">
 
-  <%= button_to "Destroy this car wash", @car_wash, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
   <%= link_to "Back", car_washes_path, class: "btn btn-primary" %>
-  <%= link_to "Book", new_car_wash_appointment_path(@car_wash), class: "btn btn-success" %>
+  <%= button_to "Destroy this car wash", @car_wash, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+   <%= link_to "Edit", edit_car_wash_path, class: "btn btn-secondary" %>
 </div>
