@@ -13,8 +13,7 @@ Rails.application.routes.draw do
 
   resources :car_washes do
     resources :appointments
-    resources :cars
   end
-  resources :cars, only: :approve
+  resources :cars
   resources :appointments, only: :destroy
 end
