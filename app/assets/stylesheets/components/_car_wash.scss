@@ -47,16 +47,6 @@ img {
   margin-bottom: 10px;
 }
 
-.btn-primary {
-  display: inline-block;
-  background-color: $primary-color;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
 .price-list {
   margin-bottom: 20px;
 
@@ -76,40 +66,6 @@ img {
 
 }
 
-.btn-danger {
-  background-color: #dc3545; /* Red color for delete button */
-  color: #fff; /* White text color */
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.btn-primary {
-  background-color: #007bff; /* Blue color for back button */
-  color: #fff;
-  display: flex;
-  margin-bottom: 5px;
- /* White text color */
-}
-
-.btn-success {
-  background-color: #28a745; /* Green color for book button */
-  color: #fff;
-   /* White text color */
-}
-
-.btn {
-  display: inline-block;
-  padding: 8px 16px; /* Adjust padding as needed */
-  text-align: center;
-  font-size: 2rem; /* Adjust font size as needed */
-  margin-bottom: 30px;
-  font-family: 'Poppins', sans-serif; /* Use a modern font like Poppins */
-  font-weight: 600; /* Use a semi-bold or bold weight */
-  color: #333; /* Set a neutral color */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 .form-input {
   width: 100%;
   padding: 10px;
@@ -127,18 +83,13 @@ img {
 .form-submit {
   width: 100%;
   padding: 12px;
-  background-color: #007bff; /* Set background color for submit button */
-  color: #fff; /* Set text color for submit button */
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  border-radius: 5px; /* Add border radius for rounded corners */
-  font-size: 1rem; /* Adjust font size as needed */
+  border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Add smooth transition effect */
-}
-
-.btn-secondary{
-  margin-top: 5px;
-  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .card-category {
@@ -189,6 +140,7 @@ img {
 
 .buttons-side-by-side{
   display:flex;
+  gap: 12px;
 }
 .form-submit:hover {
   background-color: #0056b3; /* Set hover background color for submit button */

@@ -1,12 +1,15 @@
+
+
+
 <div class="car-card row justify-content-center">
 <div class= "car-name">
-<h1>YOUR CAR</h1>
+<h1>Your Car</h1>
+<img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=1918&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Car Wash Image">
 </div>
 <div class="car-brand">
 <p><%= @car.brand %><p>
 <p>Car Type: <%= @car.car_type %></p>
 <p>Year: <%= @car.year %></p>
 </div>
-<%= button_to "Destroy this car", @car, method: :delete %>
-<%# <%= link_to "Back", car_wash_cars_path%>
+<%= button_to "Delete", @car, method: :delete ,class:"btn btn-danger"%>
 </div>

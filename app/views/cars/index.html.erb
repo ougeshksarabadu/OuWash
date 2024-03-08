@@ -1,9 +1,10 @@
-<h2>Cars</h2>
-<% @cars.each do |car| %>
-
-
-<ul><%= link_to "#{car.brand} - #{car.year} - #{car.car_type}", car %></ul>
-
-<%end%>
-<%# <%= link_to "Create car", new_car_wash_car_path %>
-
+<h2>Your Cars</h2>
+<div class="card-container">
+  <% @cars.each do |car| %>
+    <div class="card">
+      <div class="card-body">
+        <%= link_to "#{car.brand} #{car.year} - #{car.car_type}", car, class: "card-link" %>
+      </div>
+    </div>
+  <% end %>
+</div>
