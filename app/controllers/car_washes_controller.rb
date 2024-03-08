@@ -18,9 +18,9 @@ class CarWashesController < ApplicationController
 
   def index
     if current_user.owner
-      @car_washes = CarWash.where(user_id = current_user.id)
+      @car_washes = CarWash.where(user_id: current_user.id)
     else
-    @car_washes = CarWash.all
+      @car_washes = CarWash.all
     end
   end
 
