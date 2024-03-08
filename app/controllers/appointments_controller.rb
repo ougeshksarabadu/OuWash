@@ -2,7 +2,8 @@ class AppointmentsController < ApplicationController
 
   def index
     @user = current_user
-    @appointments = Appointment.where(car_wash_id: car_wash.id)
+    @appointments = current_user.appointments
+
     # if current_user.owner
     #   @car_washes = CarWash.where(user_id: current_user.id)
     #   @car_washes.each do |car_wash|
@@ -33,7 +34,6 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    raise
     @appointment = Appointment.find(params[:id])
     @appointment.destroy
     redirect_to car_wash_appointments_path(@appointment.car_wash)
@@ -41,9 +41,8 @@ class AppointmentsController < ApplicationController
 
   def approve
     @appointment = Appointment.find(params[:id])
-    @appointment.approval= true
+    @appointment.approval = true
   end
-
 
   private
 
