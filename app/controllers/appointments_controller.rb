@@ -1,17 +1,19 @@
 class AppointmentsController < ApplicationController
 
   def index
-    if current_user.owner
-      @car_washes = CarWash.where(user_id: current_user.id)
-      @car_washes.each do |car_wash|
-        @appointments = Appointment.where(car_wash_id: car_wash.id)
-      end
-    else
-      @cars = Car.where(user_id: current_user.id)
-      @cars.each do |car|
-        @appointments = Appointment.where(car_id: car.id)
-      end
-    end
+    @user = current_user
+    @appointments = Appointment.where(car_wash_id: car_wash.id)
+    # if current_user.owner
+    #   @car_washes = CarWash.where(user_id: current_user.id)
+    #   @car_washes.each do |car_wash|
+    #     @appointments = Appointment.where(car_wash_id: car_wash.id)
+    #   end
+    # else
+    #   @cars = Car.where(user_id: current_user.id)
+    #   @cars.each do |car|
+    #     @appointments = Appointment.where(car_id: car.id)
+    #   end
+    # end
   end
 
   def new
